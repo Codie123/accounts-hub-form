@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+:root{
+    --default-font:'Poppins', sans-serif;
+
+}
+*,*::after,*::before{
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 100%;
+}
+body{
+    font-family: var(--default-font);
+}
+
+
+.head-cont-I h1{
+    /* font-size: 15px; */
+}
+.sub-I h2, .period h3{
+    font-size: 15px;
+    font-weight: 200;
+}
+.head-sub{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+.sub-II{
+    width: 100%;
+    background: rgb(180, 186, 168);
+    padding: 2rem;
+    border-radius: 6px;
+}
+.period{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.period input {
+    width: 100%;
+    
+}
+.head-cont-II .sub-I{
+    display: flex;
+    justify-content: space-between;
+}
+.head-cont-II .sub-I{
+    margin-bottom: .8rem;
+}
+.banner{
+    background-color: black;
+    color: tomato;
+}
+
+/* main */
+.sec-I{
+    margin-bottom: 2rem;
+}
+.title-cont{
+    display: flex;
+    align-items: center;
+}
+.group{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.form-que{
+    margin-top: 1rem;
+}
+.form-que h3 , .cuz-group h3{
+    font-size: 20px ;
+    font-weight: 300;
+}
+.form-I{
+    display: flex;
+}
+.inner-cont{
+    display: flex;
+    justify-content: space-between;
+}
+.inner-cont span{
+    border: 1px solid ;
+    padding: 1rem;
+    color: tomato;
+}
+.cuz-group{
+    display: flex;
+    flex-direction: column;
+}
+.form-II{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* helper class */
+.cuz-mr{
+    margin-right:.9rem;
+}
+.cuz-js{
+    justify-content: flex-start;
+}
+/* ends */
