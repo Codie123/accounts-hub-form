@@ -7,63 +7,41 @@ const vatTotal = document.querySelector(".vatTotal");
 const adjustAmount = document.querySelectorAll(".adjustAmount");
 const adjustTotal = document.querySelector(".adjustTotal");
 
-let userData,
-  userData1,
-  userData2 = [];
+// let userData = [];
+// let userData1 = [];
+// let userData2 = [];
+let temp = 0;
 
 userAmount.forEach((x) => {
   x.addEventListener("change", (e) => {
-    // calculate(e.target.value);
-    !e.target.value
-      ? console.log("no value")
-      : userData.push(Number(e.target.value));
-    calculate(userData);
+    // console.log(e.target.value);
+    temp = 0;
+    document.querySelectorAll(".amount").forEach((y) => {
+      temp += Number(y.value);
+    });
+    total.value = `${temp}`;
   });
 });
-function calculate(val) {
-  console.log(val);
-  let temp = 0;
-  for (let i = 0; i < val.length; i++) {
-    temp += val[i];
 
-    total.value = `${temp}`;
-    // console.log(temp);
-  }
-
-  //   total.value = `${}`;
-}
 // _______________________________
 vatAmount.forEach((x) => {
   x.addEventListener("change", (e) => {
-    !e.target.value
-      ? console.log("no value ")
-      : userData1.push(Number(e.target.value));
-    setValue(userData1);
+    temp = 0;
+    document.querySelectorAll(".vatAmount").forEach((y) => {
+      temp += Number(y.value);
+    });
+    vatTotal.value = `${temp}`;
   });
 });
-function setValue(val) {
-  let temp = 0;
-  for (let i = 0; i < val.length; i++) {
-    temp += val[i];
-    vatTotal.value = `${temp}`;
-  }
-}
 
 //_______________________________________________
 
 adjustAmount.forEach((x) => {
   x.addEventListener("change", (e) => {
-    !e.target.value
-      ? console.log("no value ")
-      : userData2.push(Number(e.target.value));
-    setValue2(userData2);
+    temp = 0;
+    document.querySelectorAll(".adjustAmount").forEach((y) => {
+      temp += Number(y.value);
+    });
+    adjustTotal.value = `${temp}`;
   });
 });
-
-function setValue2(val) {
-  let temp = 0;
-  for (let i = 0; i < val.length; i++) {
-    temp += val[i];
-    adjustTotal.value = `${temp}`;
-  }
-}
