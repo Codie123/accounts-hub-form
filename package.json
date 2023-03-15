@@ -1,0 +1,23 @@
+{
+  "name": "accounts-hub-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codie123/accounts-hub-form.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Codie123/accounts-hub-form/issues"
+  },
+  "homepage": "https://github.com/Codie123/accounts-hub-form#readme",
+  "dependencies": {
+    "html2pdf.js": "^0.10.1"
+  }
+}

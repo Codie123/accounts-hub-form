@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accounts Hub -Vat Form</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
+      integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./dom-to-pdf.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./app.js" defer></script>
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="toggle-btn">
+      <div class="btn-dark cuz-btn">
+        <a href="index.html">UAE</a>
+      </div>
+      <div class="btn-dark cuz-btn">
+        <a href="ksa.html">KSA</a>
+      </div>
+    </div>
+    <main id="test">
+      <header class="container">
+        <div class="col-1 cuz-logo">
+          <img src="./logo.jpg" alt="" />
+        </div>
+        <div class="row align-items-end">
+          <div class="head-cont-I col">
+            <h1>Company Details</h1>
+            <div class="head-sub">
+              <div class="sub-I">
+                <h2>Name</h2>
+                <h2>Add</h2>
+                <h2>TRN</h2>
+              </div>
+              <div class="sub-II"></div>
+            </div>
+            <div class="period">
+              <h3 class="col-6">Period</h3>
+              <input type="text" />
+            </div>
+          </div>
+          <div class="head-cont-II col">
+            <div class="sub-I">
+              <h2>Student Name:</h2>
+              <input type="text" />
+            </div>
+            <div class="sub-I">
+              <h2>Batch no:</h2>
+              <input type="text" />
+            </div>
+            <div class="banner b-ksa">
+              BASED on KSA ( VAT return format for eduaction and Training
+              purpose only)
+            </div>
+            <div class="period">
+              <h3>Due date:</h3>
+              <input type="date" />
+            </div>
+          </div>
+        </div>
+      </header>
+      <hr />
+      <section class="sec-I">
+        <div class="container">
+          <div class="row">
+            <div class="form-I">
+              <div class="form-que col-12">
+                <div class="group">
+                  <div class="title col-6">
+                    <h2 class="cuz-headers ksa-I">VAT on Sales</h2>
+                  </div>
+                  <div class="inner-cont col-6">
+                    <span>Amount (SAR)</span>
+                    <span>VAT Amount (SAR)</span>
+                    <span>Adjusted(SAR)</span>
+                  </div>
+                </div>
+                <div class="group">
+                  <h3 class="col-4">1 Standard rate sales</h3>
+
+                  <div class="inner-cont col-6">
+                    <input type="text" class="amount" />
+                    <input type="text" class="vatAmount" />
+                    <input type="text" class="adjustAmount" />
+                  </div>
+                </div>
+
+                <div class="group">
+                  <h3 class="col-6">
+                    2 private health care /private Education
+                  </h3>
+                  <div class="inner-cont cuz-js col-6">
+                    <input type="text" class="amount cuz-w" />
+                    <input type="text" class="vatAmount cuz-w" />
+                  </div>
+                </div>
+                <div class="group">
+                  <h3 class="col-6">3 Zero rate domastic sales</h3>
+                  <div class="inner-cont cuz-js col-6">
+                    <input type="text" class="amount cuz-w" />
+                    <input type="text" class="vatAmount cuz-w" />
+                  </div>
+                </div>
+                <div class="group">
+                  <h3 class="col-6">4 Export</h3>
+                  <div class="inner-cont cuz-js col-6">
+                    <input type="text" class="amount cuz-w" />
+                    <input type="text" class="vatAmount cuz-w" />
+                  </div>
+                </div>
+                <div class="group">
+                  <h3 class="col-6">5 Exempt sales</h3>
+                  <div class="inner-cont cuz-js col-6">
+                    <input type="text" class="amount cuz-w" />
+                    <input type="text" class="vatAmount cuz-w" />
+                  </div>
+                </div>
+
+                <div class="group">
+                  <h3 class="col-6">6 Total</h3>
+                  <div class="inner-cont col-6">
+                    <input type="text" class="amountTotal" disabled />
+                    <input type="text" class="vatTotal" disabled />
+                    <input type="text" class="adjustTotal" disabled />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sec-I">
+        <div class="container">
+          <div class="row">
+            <div class="form-I">
+              <div class="form-que col-12">
+                <div class="group">
+                  <div class="title col-6">
+                    <h2 class="cuz-headers ksa-II">VAT on Purchase</h2>
+                  </div>
+                  <div class="inner-cont col-6">
+                    <span>Amount (SAR)</span>
+                    <span>VAT Amount (SAR)</span>
+                    <span>Adjusted(SAR)</span>
+                  </div>
+                </div>
+                <div class="group">
+                  <h3 class="col-6">7 Stanadard rate domastic purchase</h3>
+                  <div class="inner-cont col-6">
+                    <input type="text" class="amount-II" />
+                    <input type="text" class="vat-II" />
+                    <input type="text" class="adjust-II" />
+                  </div>
+                </div>
+                <div class="group">
+                  <h3 class="col-6">
+                    8 Importsubjected to VAT paid at customs
+                  </h3>
+                  <div class="inner-cont col-6">
+                    <input type="text" class="amount-II" />
+                    <input type="text" class="vat-II" />
+                    <input type="text" class="adjust-II" />
+                  </div>
+                </div>
+                <div class="group">
+                  <h3 class="col-6">
+                    9 Imports subjected to VAT accounted for through revers
+                    charge machanism
+                  </h3>
+                  <div class="inner-cont col-6">
+                    <input type="text" class="amount-II" />
+                    <input type="text" class="vat-II" />
+                    <input type="text" class="adjust-II" />
+                  </div>
+                </div>
+                <div class="group">
+                  <h3 class="col-6">10 Zero rated purchase</h3>
+                  <div class="inner-cont cuz-js col-6">
+                    <input type="text" class="amount-II cuz-w" />
+                    <input type="text" class="vat-II cuz-w" />
+                  </div>
+                </div>
+                <div class="group">
+                  <h3 class="col-6">11 Exempted Purchase</h3>
+                  <div class="inner-cont cuz-js col-6">
+                    <input type="text" class="amount-II cuz-w" />
+                    <input type="text" class="vat-II cuz-w" />
+                  </div>
+                </div>
+
+                <div class="group">
+                  <h3 class="col-6">12 Total purchase</h3>
+                  <div class="inner-cont col-6">
+                    <input type="text" class="amountTotal-II" disabled />
+                    <input type="text" class="vatTotal-II" disabled />
+                    <input type="text" class="adjustTotal-II" disabled />
+                  </div>
+                </div>
+
+                <div class="group">
+                  <h3 class="col-6">13 Total VAT due for current period</h3>
+                  <div class="inner-cont cuz-js-end col-6">
+                    <input type="text" class="cuz-w tt-vat" disabled />
+                  </div>
+                </div>
+
+                <div class="group">
+                  <h3 class="col-6">14 Correction from previous period</h3>
+                  <div class="inner-cont cuz-js-end col-6">
+                    <input type="text" class="cuz-w tt-ad" />
+                  </div>
+                </div>
+
+                <div class="group">
+                  <h3 class="col-6">
+                    15 VAT Credit carried Forward from previous period
+                  </h3>
+                  <div class="inner-cont cuz-js-end col-6">
+                    <input type="text" class="cuz-w tt-ad" />
+                  </div>
+                </div>
+
+                <div class="group">
+                  <h3 class="col-6">16 Net VAT Due</h3>
+                  <div class="inner-cont col-6 cuz-js-end">
+                    <input type="text" class="cuz-w tt-final" disabled />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec-I">
+        <div class="container">
+          <div class="row">
+            <div class="cuz-group col-6">
+              <input type="text" placeholder="Mail id " />
+            </div>
+            <div class="col-6 cuz-js-end">
+              <button class="submit cuz-sub-btn">Submit</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

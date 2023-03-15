@@ -30,7 +30,7 @@ body{
 }
 .sub-II{
     width: 100%;
-    background: rgb(180, 186, 168);
+    background:#5b9bd5;
     padding: 2rem;
     border-radius: 6px;
 }
@@ -53,6 +53,10 @@ body{
 .banner{
     background-color: black;
     color: tomato;
+}
+.b-ksa{
+    background-color: limegreen;
+    color: white;
 }
 
 /* main */
@@ -81,11 +85,17 @@ body{
 .inner-cont{
     display: flex;
     justify-content: space-between;
+    gap: 2.5rem;
 }
 .inner-cont span{
-    border: 1px solid ;
-    padding: 1rem;
-    color: tomato;
+    border: 1px solid;
+    padding: 0.6rem 1rem;
+    color: black;
+    font-weight: 800;
+    display: flex;
+    background: #fcf106;
+    align-items: center;
+    justify-content: center;
 }
 .cuz-group{
     display: flex;
@@ -95,8 +105,50 @@ body{
     display: flex;
     flex-direction: column;
 }
+.cuz-logo img{
+    width: 100%;
+}
 
-
+.toggle-btn{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    bottom: 19px;
+    right: 19px;
+    gap: 1rem;
+ 
+    flex-direction: column;
+   
+}
+.cuz-btn{
+    padding: 6px 6px;
+    border-radius: 10px;
+    text-align: center;
+    color: grey;
+}
+.cuz-btn:hover{
+    background-color: transparent!important;
+   border-color: #1a1e21 !important;
+   border: 1px solid #1a1e21;
+}
+.cuz-btn a{
+    color: white;
+    text-decoration: none;
+}
+.cuz-btn:hover> a{
+    color: #1a1e21;
+}
+/* ksa custome */
+.cuz-jf-g{
+    justify-content: flex-start;
+    /* gap: 2.5rem; */
+}
+.cuz-jf-g input{
+    width: auto;
+}
+/* ends */
 
 
 /* helper class */
@@ -106,4 +158,61 @@ body{
 .cuz-js{
     justify-content: flex-start;
 }
+.cuz-select-w{
+    width: 100%;
+}
+.cuz-mb{
+    margin-bottom: 1rem;
+}
+input{
+    width: 100%;
+}
+.cuz-w{
+    width: 29%;
+}
+.cuz-js-end{
+    display: flex;
+    justify-content: flex-end;
+}
+/* .mx-w{
+    max-width: 1000px!important;
+} */
+
+.cuz-headers{
+    background: #c4df9a;
+    padding: 1rem;
+    font-weight: 700;
+    border: 3px solid black;
+}
+.skin{
+    background-color: #fec689;
+}
+.yell{
+    background-color: #fff79a;
+}
+.ksa-I{
+    background: #006666;
+}
+.ksa-II{
+    background: #c55a11;
+}
+.cuz-sub-btn{
+    padding: 0.5rem 3rem;
+    background: green;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.2s ease-in;
+}
+.cuz-sub-btn:hover{
+    background-color: transparent;
+    border-color: green;
+    color: green;
+    transition: all 0.2s ease-in;
+
+}
+.cuz-err{
+    border-color: tomato;
+}
+
 /* ends */
