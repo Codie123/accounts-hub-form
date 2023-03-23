@@ -18,6 +18,13 @@ body{
 .head-cont-I h1{
     /* font-size: 15px; */
 }
+.head-cont-I .sub-I{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
 .sub-I h2, .period h3{
     font-size: 15px;
     font-weight: 200;
@@ -26,7 +33,7 @@ body{
     display: flex;
     align-items: center;
     gap: 1rem;
-
+    margin-bottom: 10px;
 }
 .sub-II{
     width: 100%;
@@ -37,7 +44,7 @@ body{
 .period{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    /* gap: 1rem; */
 }
 .period input {
     width: 100%;
@@ -147,6 +154,10 @@ body{
 }
 .cuz-jf-g input{
     width: auto;
+}
+.cmp-det{
+    display: flex;
+    /* gap: 1rem; */
 }
 /* ends */
 
