@@ -222,6 +222,17 @@ input{
     transition: all 0.2s ease-in;
 
 }
+.cuz-sub-btn.disable{
+    background-color: #cccccc;
+    color: #666666;
+    border: solid 1px #999999;
+}
+.cuz-sub-btn.disable:hover{
+    background-color: #cccccc;
+    color: #666666;
+    border: solid 1px #999999;
+}
+
 .cuz-err{
     border-color: tomato;
 }

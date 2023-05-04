@@ -26,18 +26,19 @@ const column13 = document.querySelector(".column13");
 const column14 = document.querySelector(".column14");
 const totalVat = document.querySelector(".tt-vat");
 // ends
-// let userData = [];
-// let userData1 = [];
-// let userData2 = [];
+const mail = document.querySelector(".mail");
+const submit = document.querySelector(".submit");
+
 let temp = 0;
-let numbers = /^[-+]?[0-9]+$/;
+let numbers = /^[-+.]?[0-9]+$/;
 userAmount.forEach((x) => {
   x.addEventListener("change", (e) => {
-    if (e.target.value.match(numbers)) {
+    if (!isNaN(e.target.value)) {
       temp = 0;
       document.querySelectorAll(".amount").forEach((y) => {
-        temp += Number(y.value);
+        temp += Math.round(y.value * 10) / 10;
       });
+
       total.value = `${temp}`;
 
       x.classList.remove("cuz-err");
@@ -50,11 +51,12 @@ userAmount.forEach((x) => {
 // _______________________________
 vatAmount.forEach((x) => {
   x.addEventListener("change", (e) => {
-    if (e.target.value.match(numbers)) {
+    if (!isNaN(e.target.value)) {
       temp = 0;
       document.querySelectorAll(".vatAmount").forEach((y) => {
-        temp += Number(y.value);
+        temp += Math.round(y.value * 10) / 10;
       });
+
       vatTotal.value = `${temp}`;
       column12.value = `${temp}`;
       difference();
@@ -69,11 +71,12 @@ vatAmount.forEach((x) => {
 
 adjustAmount.forEach((x) => {
   x.addEventListener("change", (e) => {
-    if (e.target.value.match(numbers)) {
+    if (!isNaN(e.target.value)) {
       temp = 0;
       document.querySelectorAll(".adjustAmount").forEach((y) => {
-        temp += Number(y.value);
+        temp += Math.round(y.value * 10) / 10;
       });
+
       adjustTotal.value = `${temp}`;
       ttvat();
       x.classList.remove("cuz-err");
@@ -86,11 +89,12 @@ adjustAmount.forEach((x) => {
 //________________________________________________
 amountII.forEach((x) => {
   x.addEventListener("change", (e) => {
-    if (e.target.value.match(numbers)) {
+    if (!isNaN(e.target.value)) {
       temp = 0;
       amountII.forEach((y) => {
-        temp += Number(y.value);
+        temp += Math.round(y.value * 10) / 10;
       });
+
       amountTotalII.value = `${temp}`;
       x.classList.remove("cuz-err");
     } else {
@@ -101,11 +105,12 @@ amountII.forEach((x) => {
 
 vatII.forEach((x) => {
   x.addEventListener("change", (e) => {
-    if (e.target.value.match(numbers)) {
+    if (!isNaN(e.target.value)) {
       temp = 0;
       vatII.forEach((y) => {
-        temp += Number(y.value);
+        temp += Math.round(y.value * 10) / 10;
       });
+
       vatTotalII.value = `${temp}`;
       column13.value = `${temp}`;
       difference();
@@ -119,8 +124,9 @@ adjustII.forEach((x) => {
   x.addEventListener("change", (e) => {
     temp = 0;
     adjustII.forEach((y) => {
-      temp += Number(y.value);
+      temp += Math.round(y.value * 10) / 10;
     });
+
     adjustTotalII.value = `${temp}`;
     ttvat();
   });
@@ -135,8 +141,9 @@ totalAdjust.forEach((x) => {
 function setNetVat() {
   temp = 0;
   totalAdjust.forEach((y) => {
-    temp += Number(y.value);
+    temp += Math.round(y.value * 10) / 10;
   });
+
   totalFinal.value = Number(totalVat.value) + temp;
 }
 function difference() {
@@ -149,5 +156,18 @@ function ttvat() {
   if (adjustTotal.value !== null && adjustTotalII.value !== null) {
     totalVat.value = `${Math.abs(adjustTotal.value - adjustTotalII.value)}`;
     setNetVat();
+  }
+}
+
+mail.addEventListener("keydown", submitValidation);
+console.log(mail);
+
+function submitValidation() {
+  if (mail.value != "") {
+    submit.removeAttribute("disabled", "");
+    submit.classList.remove("disable");
+  } else {
+    submit.setAttribute("disabled", "");
+    submit.classList.add("disable");
   }
 }
