@@ -92,7 +92,7 @@ function set12thval({ val1, val2 }) {
   // console.log(parseInt(vatTotal.value));
   // console.log(parseInt(val1));
   // parseInt(val1) + parseInt(val2)
-  let data = parseFloat(val1) + parseFloat(val2);
+  let data = parseFloat(val1) - parseFloat(val2);
 
   column12.value = Math.round(data * 10) / 10;
   difference();
