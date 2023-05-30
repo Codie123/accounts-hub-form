@@ -7,7 +7,7 @@ const vatTotal = document.querySelector(".vatTotal");
 const adjustAmount = document.querySelectorAll(".adjustAmount");
 const adjustTotal = document.querySelector(".adjustTotal");
 
-// section -II
+// section-II
 const amountII = document.querySelectorAll(".amount-II");
 const amountTotalII = document.querySelector(".amountTotal-II");
 
@@ -16,21 +16,26 @@ const vatTotalII = document.querySelector(".vatTotal-II");
 
 const adjustII = document.querySelectorAll(".adjust-II");
 const adjustTotalII = document.querySelector(".adjustTotal-II");
-
+const column13 = document.querySelector(".column13");
+const totalVat = document.querySelector(".tt-vat");
 const totalAdjust = document.querySelectorAll(".tt-ad");
 const totalFinal = document.querySelector(".tt-final");
+
+// extra
+const amountSP = document.querySelector(".amount-sp");
+const vatSP = document.querySelector(".vat-sp");
+const adjustSP = document.querySelector(".adjust-sp");
+
+// negative
+const amountNegative = document.querySelector(".amount-neg");
+const vatNegative = document.querySelector(".vat-neg");
+const adjustNegative = document.querySelector(".adjust-neg");
 // ends
-// section III
-const column12 = document.querySelector(".column12");
-const column13 = document.querySelector(".column13");
-const column14 = document.querySelector(".column14");
-const totalVat = document.querySelector(".tt-vat");
+
 // ends
 const mail = document.querySelector(".mail");
 const submit = document.querySelector(".submit");
-
-let temp = 0;
-let numbers = /^[-+.]?[0-9]+$/;
+// ends
 userAmount.forEach((x) => {
   x.addEventListener("change", (e) => {
     if (!isNaN(e.target.value)) {
@@ -58,9 +63,12 @@ vatAmount.forEach((x) => {
       });
 
       vatTotal.value = `${temp}`;
-
+      set13thval({ val1: vatTotalII.value, val2: adjustTotalII.value });
       // column12.value = `${temp}`;
-      set12thval({ val1: vatTotal.value, val2: adjustTotal.value });
+      //   set13thval({
+      //     val1: vatTotal.value,
+      //     val2: adjustTotal.value,
+      //   });
       x.classList.remove("cuz-err");
     } else {
       x.classList.add("cuz-err");
@@ -79,35 +87,29 @@ adjustAmount.forEach((x) => {
       });
 
       adjustTotal.value = `${temp}`;
-      set12thval({ val1: vatTotal.value, val2: adjustTotal.value });
-      ttvat();
+      //   set13thval({
+      //     val1: vatTotal.value,
+      //     val2: adjustTotal.value,
+      //   });
+      //   ttvat();
       x.classList.remove("cuz-err");
     } else {
       x.classList.add("cuz-err");
     }
   });
 });
-// 12 columns
-function set12thval({ val1, val2 }) {
-  // console.log(parseInt(vatTotal.value));
-  // console.log(parseInt(val1));
-  // parseInt(val1) + parseInt(val2)
-  let data = parseFloat(val1) + parseFloat(val2);
 
-  column12.value = Math.round(data * 10) / 10;
-  difference();
-}
-// ends
-//________________________________________________
+// section-II
 amountII.forEach((x) => {
   x.addEventListener("change", (e) => {
     if (!isNaN(e.target.value)) {
       temp = 0;
+
       amountII.forEach((y) => {
         temp += Math.round(y.value * 10) / 10;
       });
 
-      amountTotalII.value = `${temp}`;
+      amountTotalII.value = `${parseFloat(amountII[1].value) + temp}`;
       x.classList.remove("cuz-err");
     } else {
       x.classList.add("cuz-err");
@@ -115,6 +117,11 @@ amountII.forEach((x) => {
   });
 });
 
+amountSP.addEventListener("change", () => {
+  let data = `-${amountSP.value}`;
+  // console.log(data);
+  amountNegative.value = data;
+});
 vatII.forEach((x) => {
   x.addEventListener("change", (e) => {
     if (!isNaN(e.target.value)) {
@@ -123,13 +130,20 @@ vatII.forEach((x) => {
         temp += Math.round(y.value * 10) / 10;
       });
 
-      vatTotalII.value = `${temp}`;
-      set13thval({ val1: vatTotalII.value, val2: adjustTotalII.value });
+      vatTotalII.value = `${Math.abs(vatII[1].value - temp)}`;
+      set13thval({
+        val1: vatTotalII.value,
+        val2: adjustTotalII.value,
+      });
       x.classList.remove("cuz-err");
     } else {
       x.classList.add("cuz-err");
     }
   });
+});
+vatSP.addEventListener("change", () => {
+  let data = `-${vatSP.value}`;
+  vatNegative.value = data;
 });
 adjustII.forEach((x) => {
   x.addEventListener("change", (e) => {
@@ -139,39 +153,34 @@ adjustII.forEach((x) => {
     });
 
     adjustTotalII.value = `${temp}`;
-    set13thval({ val1: vatTotalII.value, val2: adjustTotalII.value });
+    set13thval({
+      val1: vatTotalII.value,
+      val2: adjustTotalII.value,
+    });
 
-    ttvat();
+    // ttvat();
   });
 });
-// 13 column
+adjustSP.addEventListener("change", () => {
+  let data = `-${adjustSP.value}`;
+  adjustNegative.value = data;
+});
+// ends
 function set13thval({ val1, val2 }) {
   // console.log(parseInt(vatTotal.value));
   // console.log(parseInt(val1));
-  let data = parseFloat(val1) + parseFloat(val2);
+
+  let diff = parseFloat(vatTotal.value) - parseFloat(adjustTotal.value);
+
+  let data = diff + parseFloat(val1) + parseFloat(val2);
+  console.log(data);
   column13.value = Math.round(data * 10) / 10;
-  difference();
 }
-// ends
 totalAdjust.forEach((x) => {
   x.addEventListener("change", () => {
     setNetVat();
   });
 });
-
-function setNetVat() {
-  temp = 0;
-  totalAdjust.forEach((y) => {
-    temp += Math.round(y.value * 10) / 10;
-  });
-
-  totalFinal.value = Number(totalVat.value) + temp;
-}
-function difference() {
-  if (column12.value !== null && column13.value !== null) {
-    column14.value = `${Math.abs(column12.value - column13.value)}`;
-  }
-}
 
 function ttvat() {
   if (totalVat === null) {
@@ -182,6 +191,14 @@ function ttvat() {
       setNetVat();
     }
   }
+}
+function setNetVat() {
+  temp = 0;
+  totalAdjust.forEach((y) => {
+    temp += Math.round(y.value * 10) / 10;
+  });
+
+  totalFinal.value = Number(totalVat.value) + temp;
 }
 
 mail.addEventListener("keydown", submitValidation);

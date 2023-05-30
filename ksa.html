@@ -13,7 +13,7 @@
     ></script>
     <script src="./dom-to-pdf.js" defer></script>
     <link rel="stylesheet" href="style.css" />
-    <script src="./app.js" defer></script>
+    <script src="./ksa-script.js" defer></script>
     <!-- bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -191,9 +191,9 @@
                     8 Importsubjected to VAT paid at customs
                   </h3>
                   <div class="inner-cont col-6">
-                    <input type="text" class="amount-II" />
-                    <input type="text" class="vat-II" />
-                    <input type="text" class="adjust-II" />
+                    <input type="text" class="amount-II amount-sp" />
+                    <input type="text" class="vat-II vat-sp" />
+                    <input type="text" class="adjust-II adjust-sp" />
                   </div>
                 </div>
                 <div class="group">
@@ -202,9 +202,9 @@
                     charge machanism
                   </h3>
                   <div class="inner-cont col-6">
-                    <input type="text" class="amount-II" />
-                    <input type="text" class="vat-II" />
-                    <input type="text" class="adjust-II" />
+                    <input type="text" class="amount-II amount-neg" disabled />
+                    <input type="text" class="vat-neg" disabled />
+                    <input type="text" class="adjust-neg" disabled />
                   </div>
                 </div>
                 <div class="group">
@@ -234,7 +234,7 @@
                 <div class="group">
                   <h3 class="col-6">13 Total VAT due for current period</h3>
                   <div class="inner-cont cuz-js-end col-6">
-                    <input type="text" class="cuz-w tt-vat" disabled />
+                    <input type="text" class="cuz-w tt-vat column13" disabled />
                   </div>
                 </div>
 
