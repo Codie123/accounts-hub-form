@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Codie123/accounts-hub-form#readme",
   "dependencies": {
-    "html2pdf.js": "^0.10.1"
+    "@emailjs/browser": "^3.11.0",
+    "html2pdf.js": "^0.10.1",
+    "jspdf": "^2.5.1"
   }
 }
