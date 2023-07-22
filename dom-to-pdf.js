@@ -1,18 +1,3 @@
-// const PUBLIC_KEY = "FmTw3vk_Mi14SA1sA";
-// (function () {
-//   emailjs.init(PUBLIC_KEY);
-// })();
-
-// const button = document.querySelector(".submit");
-// var element = document.getElementById("test");
-// var opt = {
-//   margin: 1,
-//   filename: "myfile.pdf",
-//   image: { type: "jpeg", quality: 0.98 },
-
-//   jsPDF: { unit: "px", format: [1519.2, 1428.19], orientation: "portrait" },
-// };
-
 const button = document.querySelector(".submit");
 $(document).ready(function () {
   const node = document.querySelector("#test");
